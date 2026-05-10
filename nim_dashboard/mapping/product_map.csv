@@ -1,0 +1,4 @@
+product_id,product_name,segment,product_group,asset_account_code,asset_account_name,income_account_code,income_account_name,income_type,sign_policy,include_in_nim,memo
+AUTO_LOAN,오토론,가계,오토론,110101,오토론채권,410101,오토론 이자수익,정상이자,original,Y,샘플 맵핑
+LEASE,리스,법인,리스,110201,리스채권,410201,리스 이자수익,정상이자,original,Y,샘플 맵핑
+MORTGAGE,담보대출,가계,담보대출,110301,담보대출채권,410301,담보대출 이자수익,정상이자,original,Y,샘플 맵핑
