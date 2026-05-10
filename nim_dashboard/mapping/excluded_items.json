@@ -1,0 +1,6 @@
+{
+  "exclude_from_yield_analysis": [],
+  "exclude_from_nim": [],
+  "exclude_from_funding_rate": [],
+  "exclude_from_alert": []
+}

@@ -1,0 +1,19 @@
+{
+  "app_name": "Financial Closing Analytics Dashboard",
+  "version": "v1.0-nim-mvp",
+  "raw_data_dir": "data/raw",
+  "output_dir": "output",
+  "allocation_method": "average_funding_rate",
+  "anomaly_thresholds": {
+    "warn_bp": 50,
+    "alert_bp": 100,
+    "small_balance_threshold": 1000000,
+    "reconciliation_tolerance": 1000
+  },
+  "account_detection": {
+    "interest_income_keywords": ["이자수익", "수입이자", "운용수익"],
+    "interest_expense_keywords": ["이자비용", "지급이자", "차입비용", "사채이자"],
+    "asset_keywords": ["대출", "리스", "채권", "여신", "할부", "렌탈", "운용자산"],
+    "liability_keywords": ["차입", "사채", "CP", "전단채", "부채"]
+  }
+}

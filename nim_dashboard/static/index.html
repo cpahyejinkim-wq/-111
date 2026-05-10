@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Closing Analytics Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="mark"></span><div><strong>Closing Analytics</strong><small>Mirae Asset tone</small></div></div>
+    <nav>
+      <button class="active">Dashboard Home</button><button class="active">NIM 분석</button><button disabled>손익 분석 <span>Coming soon</span></button><button disabled>BS 분석 <span>Coming soon</span></button><button disabled>ECL / 충당금</button><button disabled>투자현황</button><button disabled>시뮬레이션</button><button disabled>맵핑 관리</button><button disabled>검증 센터</button><button disabled>보고서 생성</button><button disabled>설정</button>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div><h1>여신전문금융회사 월별 NIM 분석</h1><p id="meta">dashboard_data.json loading...</p></div>
+      <div class="actions"><input id="file" type="file" accept=".xlsx,.xlsm,.xls" /><button id="uploadBtn">엑셀 업로드</button><button id="rebuildBtn">JSON 재생성</button></div>
+    </header>
+    <section class="module-strip">
+      <article class="module active">Actual NIM Analysis <strong>Active</strong></article><article class="module">Rate Sensitivity <strong>Planned</strong></article><article class="module">Funding Forecast <strong>Planned</strong></article><article class="module">Asset Forecast <strong>Planned</strong></article><article class="module">NIM Forecast Scenario <strong>Planned</strong></article><article class="module">Report Generator <strong>Planned</strong></article>
+    </section>
+    <section class="notice"><strong>이자비용 배분방식: 평균차입금리 안분 방식</strong><br />상품별 배분 이자비용 = 상품별 자산평잔 × 전체 평균차입금리. 현재 상품별 이자비용은 실제 시스템 배분액이 아니라 관리 목적의 추정 배분액입니다.</section>
+    <div class="tabs"><button data-tab="executive" class="active">Executive</button><button data-tab="product">상품별 이자수익</button><button data-tab="funding">차입금별 이자비용</button><button data-tab="decomp">NIM 분해</button><button data-tab="alerts">Alert Center</button><button data-tab="recon">맵핑 / 검증</button></div>
+    <section id="executive" class="tab active"><div id="kpis" class="kpi-grid"></div><div class="grid two"><div class="card"><h3>월별 NIM 추이</h3><div id="nimTrend" class="chart"></div></div><div class="card"><h3>이자수익 / 비용 / 순이자수익</h3><div id="incomeTrend" class="chart"></div></div><div class="card"><h3>자산평잔 / 차입부채평잔</h3><div id="balanceTrend" class="chart"></div></div><div class="card"><h3>자산수익률 vs 조달금리 vs NIM</h3><div id="rateTrend" class="chart"></div></div></div></section>
+    <section id="product" class="tab"><div class="filterbar"><select id="productMonth"></select><select id="productGroup"></select><select id="segment"></select><label><input id="productAnomalyOnly" type="checkbox" /> 이상항목만</label></div><div class="grid two"><div class="card"><h3>상품별 이자수익 Top 10</h3><div id="productTop" class="chart"></div></div><div class="card"><h3>상품별 연환산 이자수익률</h3><div id="productYield" class="chart"></div></div></div><div class="card"><h3>상품별 이자수익 상세</h3><div id="productTable"></div></div></section>
+    <section id="funding" class="tab"><div class="filterbar"><select id="fundingMonth"></select><select id="fundingGroup"></select><label><input id="fundingAnomalyOnly" type="checkbox" /> 이상항목만</label></div><div class="grid two"><div class="card"><h3>차입유형별 이자비용</h3><div id="fundingExpense" class="chart"></div></div><div class="card"><h3>조달금리 추이</h3><div id="fundingRate" class="chart"></div></div></div><div class="card"><h3>차입금별 이자비용 상세</h3><div id="fundingTable"></div></div></section>
+    <section id="decomp" class="tab"><div class="card"><h3>NIM 분해</h3><div id="decompTable"></div></div><div class="card"><h3>상품별 NIM 기여도 Top 10</h3><div id="contribution" class="chart"></div></div></section>
+    <section id="alerts" class="tab"><div id="alertCards" class="kpi-grid small"></div><div class="filterbar"><select id="alertMonth"></select><select id="severity"></select><select id="alertArea"></select></div><div class="card"><h3>Alert 상세</h3><div id="alertTable"></div></div></section>
+    <section id="recon" class="tab"><div class="grid two"><div class="card"><h3>맵핑 요약</h3><div id="mappingSummary"></div></div><div class="card"><h3>미맵핑 계정</h3><div id="unmappedSummary"></div></div></div><div class="card"><h3>검증 결과</h3><div id="reconTable"></div></div></section>
+  </main>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script>window.Plotly || document.write('<script src="/static/vendor/plotly.min.js"><\/script>')</script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

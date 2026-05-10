@@ -1,0 +1,4 @@
+funding_id,funding_name,funding_group,liability_account_code,liability_account_name,expense_account_code,expense_account_name,expense_type,contra_account_code,sign_policy,include_in_funding_rate,memo
+ST_BORROW,단기차입금,단기차입,210101,단기차입금,510101,단기차입금 이자비용,일반이자,,original,Y,샘플 맵핑
+BOND,회사채,회사채,220101,회사채,510201,회사채 이자비용,일반이자,220102,original,Y,샘플 맵핑
+CP,기업어음,CP,210201,기업어음,510301,기업어음 이자비용,일반이자,,original,Y,샘플 맵핑
